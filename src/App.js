@@ -2,24 +2,18 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Login from './login/login';
+import NavBar from './components/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import swal from 'sweetalert';
+import withStyles from './components/buttons'
+// import PropTypes from 'prop-types';
+// import { withStyles } from '@material-ui/core/styles';
+// import Button from '@material-ui/core/Button';
+// import AddIcon from '@material-ui/icons/Add';
+// import Icon from '@material-ui/core/Icon';
+// import DeleteIcon from '@material-ui/icons/Delete';
+// import NavigationIcon from '@material-ui/icons/Navigation';
 
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import AddIcon from '@material-ui/icons/Add';
-import Icon from '@material-ui/core/Icon';
-import DeleteIcon from '@material-ui/icons/Delete';
-import NavigationIcon from '@material-ui/icons/Navigation';
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  extendedIcon: {
-    marginRight: theme.spacing.unit,
-  },
-});
 
 
 class App extends Component {
@@ -84,7 +78,10 @@ login(){
 
   render() {
     return (
+      
      <div class="container">
+     <NavBar></NavBar>
+     <withStyles></withStyles>
         <div class="form-row">
              <input type="email" class="form-control form-group col-md-4" placeholder="Enter email" onChange={this.updateEmail} value={this.state.email}></input>
             <input type="password" class="form-control form-group col-md-4" placeholder="Password" onChange={this.updatePass} value={this.state.pass}></input>
